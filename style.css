@@ -93,7 +93,7 @@ h1 {
 .foto {
     display: flex;
     justify-content: center;
-    margin: 0 0 30px;
+    margin: 0 0 25px;
 }
 
 .foto img {
@@ -103,6 +103,115 @@ h1 {
     object-fit: cover;
     border: 6px solid #6757e8;
     display: block;
+}
+
+#abrirAudio,
+#botaoPrincipais {
+    display: block;
+    width: 100%;
+    margin: 0 auto 12px;
+    border: none;
+    border-radius: 13px;
+    padding: 14px 22px;
+    color: #ffffff;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+#abrirAudio {
+    background: #6757e8;
+}
+
+#botaoPrincipais {
+    background: #e4a51c;
+}
+
+#abrirAudio:hover {
+    background: #5142d1;
+    transform: scale(1.02);
+}
+
+#botaoPrincipais:hover {
+    background: #ca8f0e;
+    transform: scale(1.02);
+}
+
+#principaisContainer {
+    display: none;
+    margin: 15px 0 25px;
+    padding: 20px;
+    background: #fff8df;
+    border: 2px solid #f1d477;
+    border-radius: 16px;
+}
+
+#principaisContainer h2 {
+    margin-bottom: 15px;
+    color: #8a6500;
+    font-size: 22px;
+}
+
+#principaisContainer h2 i {
+    color: #e4a51c;
+}
+
+#listaPrincipais {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.principalTarefa {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 13px 15px;
+    background: #ffffff;
+    border-radius: 12px;
+    color: #333333;
+    font-size: 16px;
+}
+
+.principalTarefa .textoPrincipal {
+    word-break: break-word;
+}
+
+.principalTarefa.concluidaPrincipal .textoPrincipal {
+    text-decoration: line-through;
+    color: #888888;
+}
+
+.acoesPrincipal {
+    display: flex;
+    gap: 7px;
+    flex-shrink: 0;
+}
+
+.acoesPrincipal button {
+    width: 36px;
+    height: 36px;
+    border: none;
+    border-radius: 8px;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+.concluirPrincipal {
+    background: #35a854;
+}
+
+.excluirPrincipal {
+    background: #e05252;
+}
+
+#semPrincipais {
+    color: #987c31;
+    font-size: 14px;
+    text-align: center;
 }
 
 #lista {
@@ -155,16 +264,8 @@ h1 {
     background: #35a854;
 }
 
-.concluir:hover {
-    background: #288743;
-}
-
 .excluir {
     background: #e05252;
-}
-
-.excluir:hover {
-    background: #c63838;
 }
 
 .concluida {
@@ -181,6 +282,50 @@ footer {
     margin-top: 25px;
     color: #999999;
     font-size: 16px;
+}
+
+#alertaAudio {
+    display: none;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.45);
+    z-index: 9999;
+}
+
+.caixaAlerta {
+    width: 90%;
+    max-width: 400px;
+    padding: 30px;
+    background: #ffffff;
+    border-radius: 20px;
+    text-align: center;
+    box-shadow: 0 20px 45px #0005;
+}
+
+.caixaAlerta h2 {
+    color: #263b58;
+    margin-bottom: 10px;
+    font-size: 28px;
+}
+
+.caixaAlerta p {
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+.caixaAlerta button {
+    border: none;
+    border-radius: 10px;
+    padding: 12px 18px;
+    margin: 5px;
+    background: #6757e8;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: bold;
 }
 
 body.escuro {
@@ -219,11 +364,38 @@ body.escuro footer {
     color: #aaaaaa;
 }
 
-body.escuro .foto img {
-    border-color: #6757e8;
+body.escuro #principaisContainer {
+    background: #3b331d;
+    border-color: #665728;
+}
+
+body.escuro #principaisContainer h2 {
+    color: #f5d879;
+}
+
+body.escuro .principalTarefa {
+    background: #374151;
+    color: #ffffff;
+}
+
+body.escuro #semPrincipais {
+    color: #d4bd6c;
+}
+
+body.escuro .caixaAlerta {
+    background: #1f2937;
+}
+
+body.escuro .caixaAlerta h2 {
+    color: #ffffff;
+}
+
+body.escuro .caixaAlerta p {
+    color: #cccccc;
 }
 
 @media (max-width: 600px) {
+
     body {
         padding: 15px;
     }
